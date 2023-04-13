@@ -1,7 +1,7 @@
 repositories:
   common:
     url: https://github.com/JanVogelsang/ci-bennch-models.git
-    branch: main
+    branch: master-thesis-axonal-delays
 benchmarks:
   hpc_benchmark:
     repository: common
