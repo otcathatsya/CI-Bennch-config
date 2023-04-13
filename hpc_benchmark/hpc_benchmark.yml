@@ -24,13 +24,13 @@ outpath: ../../benchmark_results/HPC
 parameterset:
       name: model_commands
       parameter:
-          - {name: run_file, type: string, _: "$jube_wp_abspath/hpc_benchmark_no_hpc.py"}
+          - {name: run_file, type: string, _: "$jube_wp_abspath/hpc_benchmark.py"}
           - {name: log_path, type: string, _: "${jube_wp_abspath}"}
 fileset:
 # load and copy model-specific files
     name: model_files
     copy:
-      - $model_path/hpc_benchmark_no_hpc.py
+      - $model_path/hpc_benchmark.py
 
 # This subsituteset maps the parameters that were defined in this yaml
 # file to the target patterns that JUBE will search for in the
@@ -38,7 +38,7 @@ fileset:
 # source pattern will be replaced by the values.
 substituteset:
       name: model_substitutions
-      iofile: {in: hpc_benchmark_no_hpc.py, out: hpc_benchmark_no_hpc.py}
+      iofile: {in: hpc_benchmark.py, out: hpc_benchmark.py}
       sub:
       - {source: "{num_vps}", dest: $num_vps}
       - {source: "{record_spikes}", dest: $record_spikes}
