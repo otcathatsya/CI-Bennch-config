@@ -46,6 +46,7 @@ substituteset:
       - {source: "{model_time_presim}", dest: $model_time_presim}
       - {source: "{N_SCALING}", dest: $scale}
       - {source: "{rng_seed}", dest: $rng_seed}
+      - {source: "{compressed_spikes}", dest: $compressed_spikes}
 
 step:
 # build step
