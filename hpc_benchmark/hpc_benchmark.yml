@@ -47,6 +47,7 @@ substituteset:
       - {source: "{N_SCALING}", dest: $scale}
       - {source: "{rng_seed}", dest: $rng_seed}
       - {source: "{compressed_spikes}", dest: $compressed_spikes}
+      - {source: "{sort_connections}", dest: $sort_connections}
 
 step:
 # build step
