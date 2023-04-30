@@ -47,6 +47,8 @@ substituteset:
       - {source: "{N_SCALING}", dest: $scale}
       - {source: "{rng_seed}", dest: $rng_seed}
       - {source: "{compressed_spikes}", dest: $compressed_spikes}
+      - {source: "{dendritic_delay}", dest: $dendritic_delay}
+      - {source: "{axonal_delay}", dest: $axonal_delay}
 
 step:
 # build step
