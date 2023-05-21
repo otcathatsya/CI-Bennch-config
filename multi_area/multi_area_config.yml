@@ -16,23 +16,24 @@ run_parameters:
     data_folder_hash=$(uuidgen)
     srun -n 1 --nodes 1 python ${model_path}/run_benchmark_createParams.py ${scale} ${num_vps} ${model_time_sim} ${scale_K} ${jube_wp_abspath}/data ${data_folder_hash} ${network_state} ${rng_seed} ${model_time_presim} ${record_spikes}
   run_args: ${jube_wp_abspath}/data ${data_folder_hash} ${network_state}
-metrics:
+results:
   - rng_seed
   - num_nodes
   - threads_per_task
   - tasks_per_node
   - model_time_sim
-  - wall_time_create
-  - wall_time_connect
-  - wall_time_sim
-  - wall_time_phase_collocate
-  - wall_time_phase_communicate
-  - wall_time_phase_deliver
-  - wall_time_phase_update
-  - wall_time_communicate_target_data
-  - wall_time_gather_spike_data
-  - wall_time_gather_target_data
-  - wall_time_communicate_prepare
+metrics:
+  - time_construction_create
+  - time_construction_connect
+  - time_simulate
+  - time_collocate_spike_data
+  - time_communicate_spike_data
+  - time_deliver_spike_data
+  - time_update
+  - time_communicate_target_data
+  - time_gather_spike_data
+  - time_gather_target_data
+  - time_communicate_prepare
   - py_time_kernel_prepare
   - py_time_network_local
   - py_time_network_global

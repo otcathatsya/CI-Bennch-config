@@ -13,23 +13,24 @@ model_parameters:
   - {name: axonal_delay, type: float, _: "0.0"}  # axonal delay of all connections
 run_parameters:
   script_path: hpc_benchmark.py
-metrics:
+results:
   - rng_seed
   - num_nodes
   - threads_per_task
   - tasks_per_node
   - model_time_sim
-  - wall_time_create
-  - wall_time_connect
-  - wall_time_sim
-  - wall_time_phase_collocate
-  - wall_time_phase_communicate
-  - wall_time_phase_deliver
-  - wall_time_phase_update
-  - wall_time_communicate_target_data
-  - wall_time_gather_spike_data
-  - wall_time_gather_target_data
-  - wall_time_communicate_prepare
+metrics:
+  - time_construction_create
+  - time_construction_connect
+  - time_simulate
+  - time_collocate_spike_data
+  - time_communicate_spike_data
+  - time_deliver_spike_data
+  - time_update
+  - time_communicate_target_data
+  - time_gather_spike_data
+  - time_gather_target_data
+  - time_communicate_prepare
   - py_time_kernel_prepare
   - py_time_network_local
   - py_time_network_global
