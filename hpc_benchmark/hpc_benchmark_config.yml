@@ -35,6 +35,7 @@ metrics:
   - time_gather_target_data
   - time_communicate_prepare
   - time_node_archive
+  - time_correction
   - py_time_kernel_prepare
   - py_time_network_local
   - py_time_network_global
