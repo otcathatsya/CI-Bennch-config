@@ -40,6 +40,7 @@ metrics:
   - py_time_network_global
   - py_time_simulate
   - py_time_presimulate
+  - py_time_init
   - py_time_network_prepare
   - py_time_create
   - py_time_connect_area
