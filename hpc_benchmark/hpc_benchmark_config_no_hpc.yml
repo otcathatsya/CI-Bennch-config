@@ -18,6 +18,8 @@ results:
   - threads_per_task
   - tasks_per_node
   - model_time_sim
+  - dendritic_delay
+  - axonal_delay
 metrics:
   - time_construction_create
   - time_construction_connect
