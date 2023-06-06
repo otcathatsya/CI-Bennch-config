@@ -7,14 +7,6 @@ benchmarks:
     repository: common
     model_dir: hpc_benchmark  # path to model directory inside repository
     config_path: hpc_benchmark/hpc_benchmark_config.yml  # relative to config repo root
-  microcircuit:
-    repository: common
-    model_dir: Potjans_2014
-    config_path: microcircuit/microcircuit_config.yml
-  multi_area:
-    repository: common
-    model_dir: multi-area-model
-    config_path: multi_area/multi_area_config.yml
 user_config:
   jureca:
     compute-project: "cjinb33"  # account name for jutil env (for SCRATCH)
