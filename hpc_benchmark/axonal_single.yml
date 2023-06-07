@@ -10,7 +10,7 @@ model_parameters:
   - {name: sort_connections, type: string, _: "True"}
   - {name: scaling_type, _: "strong"}  # can be either weak or strong
   - {name: dendritic_delay, type: float, _: "0.5"}  # dendritic delay of all connections
-  - {name: axonal_delay, type: float, _: "5.5,6.5,7.5,8.5,9.,9.5,11,12.5"}  # axonal delay of all connections
+  - {name: axonal_delay, type: float, _: "1.0,2.5,5.5,8.5"}  # axonal delay of all connections
 run_parameters:
   script_path: hpc_benchmark.py
 results:
