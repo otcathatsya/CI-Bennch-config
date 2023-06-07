@@ -1,0 +1,59 @@
+machines:
+  jureca: "jureca_threads.yml"
+model_parameters:
+  - {name: model_time_sim, type: float, _: "0.1"}  # biological time to be simulated in ms
+  - {name: model_time_presim, type: float, _: "0.1"}  # presimulation time for avoiding initial transients in ms
+  - {name: scale_N, type: float, _: "1."}  # scaling the number of neurons, 1. -> original model
+  - {name: record_spikes, type: string, _: "False"}  # whether to write spiking output to file, either True or False
+  - {name: rng_seed, type: int, _: "55"}  # rng seed for NEST, accepts a list in the format a,b,c,... for generating multiple runs
+  - {name: compressed_spikes, type: string, _: "True"}
+  - {name: scaling_type, _: "strong"}  # can be either weak or strong
+  - {name: dendritic_delay, type: float, _: "0.2"}  # dendritic delay of all connections
+  - {name: axonal_delay, type: float, _: "0.0"}  # axonal delay of all connections
+run_parameters:
+  script_path: hpc_benchmark_no_hpc_no_reserve.py
+results:
+  - scale
+  - rng_seed
+  - num_nodes
+  - threads_per_task
+  - tasks_per_node
+  - model_time_sim
+  - model_time_presim
+  - dendritic_delay
+  - axonal_delay
+metrics:
+  - time_construction_create
+  - time_construction_connect
+  - time_simulate
+  - time_collocate_spike_data
+  - time_communicate_spike_data
+  - time_deliver_spike_data
+  - time_update
+  - time_communicate_target_data
+  - time_gather_spike_data
+  - time_gather_target_data
+  - time_communicate_prepare
+  - time_adjacency_list
+  - time_deliver_node
+  - time_stdp_delivery
+  - time_static_delivery
+  - time_node_archive
+  - py_time_kernel_prepare
+  - py_time_network_local
+  - py_time_network_global
+  - py_time_simulate
+  - py_time_presimulate
+  - py_time_init
+  - py_time_network_prepare
+  - py_time_create
+  - py_time_connect_area
+  - py_time_connect_cc
+  - py_time_connect
+metrics_sum:
+  - base_memory
+  - network_memory
+  - init_memory
+  - total_memory
+  - num_connections
+  - local_spike_counter
