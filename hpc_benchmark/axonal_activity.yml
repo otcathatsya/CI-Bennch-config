@@ -25,7 +25,6 @@ results:
   - dendritic_delay
   - axonal_delay
   - rate
-  - num_corrections
 metrics:
   - time_construction_create
   - time_construction_connect
@@ -61,3 +60,4 @@ metrics_sum:
   - total_memory
   - num_connections
   - local_spike_counter
+  - num_corrections
