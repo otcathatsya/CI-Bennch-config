@@ -24,6 +24,7 @@ results:
   - model_time_presim
   - dendritic_delay
   - axonal_delay
+  - min_delay
 metrics:
   - time_construction_create
   - time_construction_connect
