@@ -23,6 +23,7 @@ results:
   - model_time_presim
   - dendritic_delay
   - axonal_delay
+  - num_corrections
 metrics:
   - time_construction_create
   - time_construction_connect

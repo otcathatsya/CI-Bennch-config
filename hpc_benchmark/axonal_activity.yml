@@ -25,6 +25,7 @@ results:
   - dendritic_delay
   - axonal_delay
   - rate
+  - num_corrections
 metrics:
   - time_construction_create
   - time_construction_connect
