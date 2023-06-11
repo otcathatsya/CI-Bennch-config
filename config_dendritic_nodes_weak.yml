@@ -6,7 +6,7 @@ benchmarks:
   hpc_benchmark:
     repository: common
     model_dir: hpc_benchmark  # path to model directory inside repository
-    config_path: hpc_benchmark/axonal_nodes_weak.yml  # relative to config repo root
+    config_path: hpc_benchmark/dendritic_nodes_weak.yml  # relative to config repo root
 user_config:
   jureca:
     compute-project: "cjinb33"  # account name for jutil env (for SCRATCH)
