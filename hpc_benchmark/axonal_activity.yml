@@ -54,8 +54,19 @@ metrics:
   - py_time_connect
 metrics_sum:
   - base_memory
+  - base_memory_rss
+  - base_memory_peak
+  - node_memory
+  - node_memory_rss
+  - node_memory_peak
   - network_memory
+  - network_memory_rss
+  - network_memory_peak
   - init_memory
+  - init_memory_rss
+  - init_memory_peak
   - total_memory
+  - total_memory_rss
+  - total_memory_peak
   - num_connections
   - local_spike_counter
