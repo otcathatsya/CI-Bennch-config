@@ -1,8 +1,8 @@
 machines:
   jureca: "jureca_threads.yml"
 model_parameters:
-  - {name: model_time_sim, type: float, _: "1499.9"}  # biological time to be simulated in ms
-  - {name: model_time_presim, type: float, _: "0.1"}  # presimulation time for avoiding initial transients in ms
+  - {name: model_time_sim, type: float, _: "1500.0"}  # biological time to be simulated in ms
+  - {name: model_time_presim, type: float, _: "0.0"}  # presimulation time for avoiding initial transients in ms
   - {name: scale_N, type: float, _: "10."}  # scaling the number of neurons, 1. -> original model
   - {name: record_spikes, type: string, _: "False"}  # whether to write spiking output to file, either True or False
   - {name: rng_seed, type: int, _: "42,55,1010101"}  # rng seed for NEST, accepts a list in the format a,b,c,... for generating multiple runs
