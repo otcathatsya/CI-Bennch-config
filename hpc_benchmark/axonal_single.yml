@@ -67,4 +67,3 @@ metrics_sum:
   - total_memory_rss
   - total_memory_peak
   - num_connections
-  - local_spike_counter
