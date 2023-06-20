@@ -33,6 +33,7 @@ metrics:
   - time_communicate_spike_data
   - time_deliver_spike_data
   - time_deliver_conn
+  - time_deliver_node
   - time_stdp_delivery
   - time_static_delivery
   - time_update
