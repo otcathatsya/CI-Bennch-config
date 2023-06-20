@@ -39,6 +39,7 @@ metrics:
   - time_stdp_delivery
   - time_static_delivery
   - time_node_archive
+  - time_deliver_conn
   - py_time_kernel_prepare
   - py_time_network_local
   - py_time_network_global
