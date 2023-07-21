@@ -175,6 +175,7 @@ benchmarks:
       - threads_per_task
       - tasks_per_node
       - model_time_sim
+      - model_time_presim
     metrics:
       - time_construction_create
       - time_construction_connect
