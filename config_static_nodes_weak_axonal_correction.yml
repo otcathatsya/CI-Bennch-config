@@ -56,6 +56,7 @@ benchmarks:
       - time_deliver_node
       - time_stdp_delivery
       - time_static_delivery
+      - time_node_archive
       - time_correction
       - py_time_kernel_prepare
       - py_time_network_local
@@ -135,6 +136,7 @@ benchmarks:
       - time_deliver_node
       - time_stdp_delivery
       - time_static_delivery
+      - time_node_archive
       - time_correction
       - py_time_kernel_prepare
       - py_time_network_local
@@ -212,6 +214,7 @@ benchmarks:
       - time_deliver_node
       - time_stdp_delivery
       - time_static_delivery
+      - time_node_archive
       - time_correction
       - py_time_kernel_prepare
       - py_time_network_local
