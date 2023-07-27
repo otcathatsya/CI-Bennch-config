@@ -1,15 +1,15 @@
 jureca:
-  init: |
-    ml Stages/2023 Python/3.10.4
-    python -m venv --system-site-packages benchmarking-env
-  load: |
-    ml Stages/2023 Python/3.10.4 PyYAML/6.0
-    jutil env activate -p djinb33
-    jutil env activate -p cjinb33
-    source benchmarking-env/bin/activate
-    export PYTHONPATH="$PYTHONPATH:$USERSOFTWARE/ci-bennch/jureca/bennchplot/"
-    ln -s "$USERSOFTWARE/ci-bennch/jureca/builder/build.sh" "$(pwd)/build"
-    export PATH="$(pwd):$USERSOFTWARE/ci-bennch/jureca/git-annex:$PATH"
+  init:
+    - 'ml Stages/2023 Python/3.10.4'
+    - 'python -m venv --system-site-packages benchmarking-env'
+  load:
+    - 'ml Stages/2023 Python/3.10.4 PyYAML/6.0'
+    - 'jutil env activate -p djinb33'
+    - 'jutil env activate -p cjinb33'
+    - 'source benchmarking-env/bin/activate'
+    - 'export PYTHONPATH="$PYTHONPATH:$USERSOFTWARE/ci-bennch/jureca/bennchplot/"'
+    - 'ln -s "$USERSOFTWARE/ci-bennch/jureca/builder/build.sh" "$(pwd)/build"'
+    - 'export PATH="$(pwd):$USERSOFTWARE/ci-bennch/jureca/git-annex:$PATH"'
   modules:
     - Stages/2023
     - GCCcore/.11.3.0
