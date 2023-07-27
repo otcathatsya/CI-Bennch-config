@@ -2,10 +2,10 @@ jureca:
   variables:
     TEMP_DIR: "$$SCRATCH_cjinb33/ci-bennch/jureca/userdata"   # Directory to temporary files accessible from both login and compute nodes
   init:
+    - 'module load Python/3.10.4 PyYAML/6.0'
     - 'python -m venv --system-site-packages benchmarking-env'
   load:
     - 'jutil env activate -p djinb33'
-    - 'jutil env activate -p cjinb33'
     - 'source benchmarking-env/bin/activate'
     - 'export PYTHONPATH="$PYTHONPATH:$USERSOFTWARE/ci-bennch/jureca/bennchplot/"'
     - 'ln -s "$USERSOFTWARE/ci-bennch/jureca/builder/build.sh" "$(pwd)/build"'
