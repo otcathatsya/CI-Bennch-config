@@ -1,4 +1,6 @@
 jureca:
+  variables:
+    TEMP_DIR: "$SCRATCH_cjinb33/ci-bennch/$WORKSPACE/jureca/userdata"   # Directory to temporary files accessible from both login and compute nodes
   init:
     - 'ml Stages/2023 Python/3.10.4'
     - 'python -m venv --system-site-packages benchmarking-env'
