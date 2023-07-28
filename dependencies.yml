@@ -5,11 +5,11 @@ jureca:
     - 'module load Python/3.10.4 PyYAML/6.0'
   init:
     - 'python -m venv --system-site-packages benchmarking-env'
+    - 'ln -s "$USERSOFTWARE/ci-bennch/jureca/builder/build.sh" "$(pwd)/build"'
   load:
     - 'jutil env activate -p djinb33'
     - 'source benchmarking-env/bin/activate'
     - 'export PYTHONPATH="$PYTHONPATH:$USERSOFTWARE/ci-bennch/jureca/bennchplot/"'
-    - 'ln -s "$USERSOFTWARE/ci-bennch/jureca/builder/build.sh" "$(pwd)/build"'
     - 'export PATH="$(pwd):$USERSOFTWARE/ci-bennch/jureca/git-annex:$PATH"'
   modules:
     - Stages/2023
@@ -42,11 +42,11 @@ jusuf:
     - 'module load Python/3.10.4 PyYAML/6.0'
   init:
     - 'python -m venv --system-site-packages benchmarking-env'
+    - 'ln -s "$USERSOFTWARE/ci-bennch/jureca/builder/build.sh" "$(pwd)/build"'
   load:
     - 'jutil env activate -p djinb33'
     - 'source benchmarking-env/bin/activate'
     - 'export PYTHONPATH="$PYTHONPATH:$USERSOFTWARE/ci-bennch/jureca/bennchplot/"'
-    - 'ln -s "$USERSOFTWARE/ci-bennch/jureca/builder/build.sh" "$(pwd)/build"'
     - 'export PATH="$(pwd):$USERSOFTWARE/ci-bennch/jureca/git-annex:$PATH"'
   modules:
     - Stages/2023
