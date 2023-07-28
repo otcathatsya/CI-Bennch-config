@@ -32,7 +32,7 @@ jureca:
     - 'module load $MODULE_LIST'
     - 'python -m venv --system-site-packages benchmarking-env'
     - 'benchmarking-env/bin/pip install $PIP_LIST'
-    - 'ln -s "$(realpath $USERSOFTWARE_DIR/builder/build.sh)" "$(pwd)/build"'
+    - 'ln -s "$USERSOFTWARE_DIR/builder/build.sh" "$(pwd)/build"'
   load:
     - 'module load $MODULE_LIST'
     - 'jutil env activate -p djinb33'
@@ -45,8 +45,9 @@ jusuf:
     USERSOFTWARE_DIR: "$$USERSOFTWARE_djinb33/ci-bennch/jusuf"
     MODULE_LIST: *module-list
     PIP_LIST: *pip-list
-  base:
   init:
+    - 'eval TEMP_DIR="$TEMP_DIR"'
+    - 'eval USERSOFTWARE_DIR="$USERSOFTWARE_DIR"'
     - 'module load $MODULE_LIST'
     - 'python -m venv --system-site-packages benchmarking-env'
     - 'benchmarking-env/bin/pip install $PIP_LIST'
