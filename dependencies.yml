@@ -18,7 +18,6 @@ jureca:
     - GCC/11.3.0
     - CMake/3.23.1
     - ParaStationMPI/5.8.0-1
-    - Python/3.10.4
     - SciPy-bundle/2022.05
     - matplotlib/3.5.2
     - mpi4py/3.1.4
@@ -28,7 +27,6 @@ jureca:
     - Autotools/20220317
     - git/2.36.0-nodocs
     - IPython/8.5.0
-    - PyYAML/6.0
     - JUBE/2.5.1
   pip:
     - future
@@ -56,7 +54,6 @@ jusuf:
     - GCC/11.3.0
     - CMake/3.23.1
     - ParaStationMPI/5.8.0-1
-    - Python/3.10.4
     - SciPy-bundle/2022.05
     - matplotlib/3.5.2
     - mpi4py/3.1.4
@@ -66,7 +63,6 @@ jusuf:
     - Autotools/20220317
     - git/2.36.0-nodocs
     - IPython/8.5.0
-    - PyYAML/6.0
     - JUBE/2.5.1
   pip:
     - future
