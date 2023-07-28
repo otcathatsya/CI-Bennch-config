@@ -36,6 +36,8 @@ jureca:
     - 'benchmarking-env/bin/pip install $PIP_LIST'
     - 'ln -s "$USERSOFTWARE_DIR/builder/build.sh" "$(pwd)/build"'
   load:
+    - 'eval TEMP_DIR="$TEMP_DIR"'
+    - 'eval USERSOFTWARE_DIR="$USERSOFTWARE_DIR"'
     - 'module load $MODULE_LIST'
     - 'jutil env activate -p djinb33'
     - 'source benchmarking-env/bin/activate'
