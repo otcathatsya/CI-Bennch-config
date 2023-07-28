@@ -32,7 +32,7 @@ jureca:
     - 'module load $MODULE_LIST'
     - 'python -m venv --system-site-packages benchmarking-env'
     - 'benchmarking-env/bin/pip install $PIP_LIST'
-    - 'ln -s "$USERSOFTWARE_DIR/builder/build.sh" "$(pwd)/build"'
+    - 'ln -s "$(realpath $USERSOFTWARE_DIR/builder/build.sh)" "$(pwd)/build"'
   load:
     - 'module load $MODULE_LIST'
     - 'jutil env activate -p djinb33'
