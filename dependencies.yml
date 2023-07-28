@@ -27,6 +27,8 @@ jureca:
     MODULE_LIST: *module-list
     PIP_LIST: *pip-list
   init:
+    - 'eval TEMP_DIR="$TEMP_DIR"'
+    - 'eval USERSOFTWARE_DIR="$USERSOFTWARE_DIR"'
     - 'module load $MODULE_LIST'
     - 'python -m venv --system-site-packages benchmarking-env'
     - 'benchmarking-env/bin/pip install $PIP_LIST'
