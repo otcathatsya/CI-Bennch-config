@@ -1,16 +1,17 @@
 jureca:
   variables:
     TEMP_DIR: "$$SCRATCH_cjinb33/ci-bennch/jureca/userdata"   # Directory to temporary files accessible from both login and compute nodes
+    USERSOFTWARE_DIR: "$$USERSOFTWARE_djinb33/ci-bennch/jureca"
   base:
     - 'module load Python/3.10.4 PyYAML/6.0'
   init:
     - 'python -m venv --system-site-packages benchmarking-env'
-    - 'ln -s "$USERSOFTWARE/ci-bennch/jureca/builder/build.sh" "$(pwd)/build"'
+    - 'ln -s "$USERSOFTWARE_DIR/builder/build.sh" "$(pwd)/build"'
   load:
     - 'jutil env activate -p djinb33'
     - 'source benchmarking-env/bin/activate'
-    - 'export PYTHONPATH="$PYTHONPATH:$USERSOFTWARE/ci-bennch/jureca/bennchplot/"'
-    - 'export PATH="$(pwd):$USERSOFTWARE/ci-bennch/jureca/git-annex:$PATH"'
+    - 'export PYTHONPATH="$PYTHONPATH:$USERSOFTWARE_DIR/bennchplot/"'
+    - 'export PATH="$(pwd):$USERSOFTWARE_DIR/git-annex:$PATH"'
   modules:
     - Stages/2023
     - GCCcore/.11.3.0
@@ -37,17 +38,18 @@ jureca:
     - nbconvert
 jusuf:
   variables:
-    TEMP_DIR: "$$SCRATCH_cjinb33/ci-bennch/jureca/userdata"   # Directory to temporary files accessible from both login and compute nodes
+    TEMP_DIR: "$$SCRATCH_cjinb33/ci-bennch/jusuf/userdata"   # Directory to temporary files accessible from both login and compute nodes
+    USERSOFTWARE_DIR: "$$USERSOFTWARE_djinb33/ci-bennch/jusuf"
   base:
     - 'module load Python/3.10.4 PyYAML/6.0'
   init:
     - 'python -m venv --system-site-packages benchmarking-env'
-    - 'ln -s "$USERSOFTWARE/ci-bennch/jureca/builder/build.sh" "$(pwd)/build"'
+    - 'ln -s "$USERSOFTWARE_DIR/builder/build.sh" "$(pwd)/build"'
   load:
     - 'jutil env activate -p djinb33'
     - 'source benchmarking-env/bin/activate'
-    - 'export PYTHONPATH="$PYTHONPATH:$USERSOFTWARE/ci-bennch/jureca/bennchplot/"'
-    - 'export PATH="$(pwd):$USERSOFTWARE/ci-bennch/jureca/git-annex:$PATH"'
+    - 'export PYTHONPATH="$PYTHONPATH:$USERSOFTWARE_DIR/bennchplot/"'
+    - 'export PATH="$(pwd):$USERSOFTWARE_DIR/git-annex:$PATH"'
   modules:
     - Stages/2023
     - GCCcore/.11.3.0
