@@ -8,12 +8,12 @@ benchmarks:
     model_dir: hpc_benchmark  # path to model directory inside repository
     machine_parameters:
       jureca:
-        num_nodes: "1"}
+        num_nodes: "1"
         tasks_per_node: "2"
         threads_per_task: "64"
         walltime: "00:05:00"
       jusuf:
-        num_nodes: "1"}
+        num_nodes: "1"
         tasks_per_node: "2"
         threads_per_task: "64"
         walltime: "00:05:00"
@@ -68,12 +68,12 @@ benchmarks:
     model_dir: Potjans_2014
     machine_parameters:
       jureca:
-        num_nodes: "1"}
+        num_nodes: "1"
         tasks_per_node: "2"
         threads_per_task: "64"
         walltime: "00:01:00"
       jusuf:
-        num_nodes: "1"}
+        num_nodes: "1"
         tasks_per_node: "2"
         threads_per_task: "64"
         walltime: "00:01:00"
@@ -136,12 +136,12 @@ benchmarks:
     model_dir: multi-area-model
     machine_parameters:
       jureca:
-        num_nodes: "1"}
+        num_nodes: "1"
         tasks_per_node: "2"
         threads_per_task: "64"
         walltime: "00:01:00"
       jusuf:
-        num_nodes: "1"}
+        num_nodes: "1"
         tasks_per_node: "2"
         threads_per_task: "64"
         walltime: "00:01:00"
