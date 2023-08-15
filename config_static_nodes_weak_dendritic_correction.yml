@@ -1,10 +1,13 @@
 repositories:
-  common:
+  thesis:
     url: https://github.com/JanVogelsang/ci-bennch-models.git
     branch: master-thesis-axonal-delays
+  common:
+    url: https://github.com/JanVogelsang/ci-bennch-models.git
+    branch: main
 benchmarks:
   hpc_benchmark:
-    repository: common
+    repository: thesis
     model_dir: hpc_benchmark  # path to model directory inside repository
     machine_parameters:
       jureca:
