@@ -159,17 +159,15 @@ benchmarks:
     model_dir: multi-area-model
     machine_parameters:
       jureca:
-        - {name: num_nodes, type: int, _: "1"}
-        - {name: tasks_per_node, type: int, _: "2"}
-        - {name: threads_per_task, type: int, _: "64"}
-        - {name: walltime, type: string, _: "00:05:00"}
-        - {name: affinity, type: string, separator: ";", _: "--cpu-bind=verbose,threads --distribution=block:cyclic:fcyclic --threads-per-core=1"}  # processor affinity/pinning
+        num_nodes: "1"
+        tasks_per_node: "2"
+        threads_per_task: "64"
+        walltime: "00:05:00"
       jusuf:
-        - {name: num_nodes, type: int, _: "1"}
-        - {name: tasks_per_node, type: int, _: "2"}
-        - {name: threads_per_task, type: int, _: "64"}
-        - {name: walltime, type: string, _: "00:05:00"}
-        - {name: affinity, type: string, separator: ";", _: "--cpu-bind=verbose,threads --distribution=block:cyclic:fcyclic --threads-per-core=1"}  # processor affinity/pinning
+        num_nodes: "1"
+        tasks_per_node: "2"
+        threads_per_task: "64"
+        walltime: "00:05:00"
     model_parameters:
       - {name: network_state, type: string, _: "metastable"}  # can be either "metastable" or "ground"
       - {name: record_spikes, type: string, _: "False"}  # whether to write spiking output to file, either True or False
@@ -236,7 +234,9 @@ user_config:
   jureca:
     account: "jinb33"  # slurm account name for job submission
     partition: "dc-cpu"  # cluster partition, takes system default if left empty
+    build-time-limit: "00:10:00"
   jusuf:
     account:  "icei-hbp-2020-0005"
     partition: "batch"
+    build-time-limit: "00:10:00"
 dependencies: dependencies.yml
