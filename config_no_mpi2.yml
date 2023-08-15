@@ -11,12 +11,12 @@ benchmarks:
         num_nodes: "1"
         tasks_per_node: "1"
         threads_per_task: "1,2,4,8,16,32,64,128"
-        walltime: "00:05:00"
+        walltime: "00:15:00"
       jusuf:
         num_nodes: "1"
         tasks_per_node: "1"
         threads_per_task: "1,2,4,8,16,32,64,128"
-        walltime: "00:05:00"
+        walltime: "00:15:00"
     model_parameters:
       - {name: net_params, type: string, _: "network_params.py"}  # default network parameters
       - {name: scale_N, type: float, _: "1."}  # scaling the number of neurons, 1. -> original model
