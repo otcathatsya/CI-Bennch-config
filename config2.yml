@@ -9,7 +9,7 @@ benchmarks:
     machine_parameters:
       jureca:
         num_nodes: "4,8,12,24,32,64"
-        tasks_per_node_: "2"
+        tasks_per_node: "2"
         threads_per_task: "64"
         walltime: "00:05:00"
       jusuf:
