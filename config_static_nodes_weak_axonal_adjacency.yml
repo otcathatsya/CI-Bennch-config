@@ -95,10 +95,10 @@ benchmarks:
       - {name: poisson_input, type: string, _: "False"}  # choose Poisson or DC input
       - {name: V0_type, type: text, _: "'optimized'"}  # choose default or optimized initial conditions for the membrane potential
       - {name: synapse_type, type: text, _: "'static_synapse'"}  # type of synapses in the model
-      - {name: sim_params, _: "sim_params.py"}  # default simulation parameters
+      - {name: sim_params, type: string, _: "sim_params.py"}  # default simulation parameters
       - {name: model_time_sim, type: float, _: "10000."}  # biological time to be simulated in ms
-      - {name: model_time_presim, _: "0."}  # in ms
-      - {name: rng_seed, _: "55"}  # rng seed
+      - {name: model_time_presim, type: float, _: "0."}  # in ms
+      - {name: rng_seed, type: int, _: "55"}  # rng seed
       - {name: record_spikes, type: string, _: ""}  # change to 'spike_recorder' for spike recordings
       - {name: kwds, separator: ;, type: string, _: "{}"}  # can be used for passing arguments to SetKernelStatus, such as max_buffer_size_spike_data. If no arguments should be passed leave this empty. If something should be passed insert a dictionary, eg: {'max_buffer_size_spike_data': 10}
       - {name: compressed_spikes, type: string, _: "True"}
@@ -175,7 +175,7 @@ benchmarks:
       - {name: model_time_presim, type: float, _: "10."}  # presimulation time for avoiding initial transients in ms
       - {name: scale_N, type: float, _: "0.01"}  # scaling the number of neurons, 1. -> original model
       - {name: scale_K, type: float, _: "0.01"}  # scaling the indegree, 1. -> original model
-      - {name: rng_seed, _: "55"}  # rng seed for NEST, accepts a list in the format a,b,c,... for generating multiple runs
+      - {name: rng_seed, type: int, _: "55"}  # rng seed for NEST, accepts a list in the format a,b,c,... for generating multiple runs
       - {name: compressed_spikes, type: string, _: "True"}
     run_parameters:
       log_path: "data/${data_folder_hash}/recordings"
