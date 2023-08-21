@@ -23,7 +23,7 @@ benchmarks:
     model_parameters:
       - {name: model_time_sim, type: float, _: "1500.0"}  # biological time to be simulated in ms
       - {name: model_time_presim, type: float, _: "0.0"}  # presimulation time for avoiding initial transients in ms
-      - {name: scale_N, type: float, _: "10.*$num_nodes"}  # scaling the number of neurons, 1. -> original model
+      - {name: scale_N, mode: python, type: float, _: "10.*$num_nodes"}  # scaling the number of neurons, 1. -> original model
       - {name: record_spikes, type: string, _: "False"}  # whether to write spiking output to file, either True or False
       - {name: rng_seed, type: int, _: "42,55,1010101"}  # rng seed for NEST, accepts a list in the format a,b,c,... for generating multiple runs
       - {name: compressed_spikes, type: string, _: "True"}
@@ -90,7 +90,7 @@ benchmarks:
         walltime: "00:40:00"
     model_parameters:
       - {name: net_params, type: string, _: "network_params.py"}  # default network parameters
-      - {name: scale_N, type: float, _: "1.*$num_nodes"}  # scaling the number of neurons, 1. -> original model
+      - {name: scale_N, mode: python, type: float, _: "1.*$num_nodes"}  # scaling the number of neurons, 1. -> original model
       - {name: scale_K, type: float, _: "1."}  # scaling the indegree, 1. -> original model
       - {name: poisson_input, type: string, _: "False"}  # choose Poisson or DC input
       - {name: V0_type, type: text, _: "'optimized'"}  # choose default or optimized initial conditions for the membrane potential
