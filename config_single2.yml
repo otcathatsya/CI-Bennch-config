@@ -3,6 +3,65 @@ repositories:
     url: https://github.com/JanVogelsang/ci-bennch-models.git
     branch: main
 benchmarks:
+  hpc_benchmark:
+    repository: common
+    model_dir: hpc_benchmark  # path to model directory inside repository
+    machine_parameters:
+      jureca:
+        num_nodes: "2"
+        tasks_per_node: "1,2,4,8,16"
+        threads_per_task: "16"
+        walltime: "00:05:00"
+      jusuf:
+        num_nodes: "2"
+        tasks_per_node: "1,2,4,8,16"
+        threads_per_task: "16"
+        walltime: "00:05:00"
+    model_parameters:
+      - {name: model_time_sim, type: float, _: "1000."}       # biological time to be simulated in ms
+      - {name: model_time_presim, type: float, _: "500."}     # presimulation time for avoiding initial transients in ms
+      - {name: scale_N, mode: python, type: float, _: "8."}      # scaling the number of neurons, 1. -> original model
+      - {name: record_spikes, type: string, _: "False"}       # whether to write spiking output to file, either True or False
+      - {name: rng_seed, type: int, _: "654,55,92743"}        # rng seed for NEST, accepts a list in the format a,b,c,... for generating multiple runs
+    run_parameters:
+      script_path: hpc_benchmark_2.py
+    results:
+      - scale
+      - rng_seed
+      - num_nodes
+      - threads_per_task
+      - tasks_per_node
+      - model_time_sim
+      - model_time_presim
+    metrics:
+      - time_construction_create
+      - time_construction_connect
+      - time_simulate
+      - time_collocate_spike_data
+      - time_communicate_spike_data
+      - time_deliver_spike_data
+      - time_update
+      - time_communicate_target_data
+      - time_gather_spike_data
+      - time_gather_target_data
+      - time_communicate_prepare
+      - py_time_kernel_prepare
+      - py_time_network_local
+      - py_time_network_global
+      - py_time_simulate
+      - py_time_presimulate
+      - py_time_network_prepare
+      - py_time_create
+      - py_time_connect_area
+      - py_time_connect_cc
+      - py_time_connect
+    metrics_sum:
+      - base_memory
+      - network_memory
+      - init_memory
+      - total_memory
+      - num_connections
+      - local_spike_counter
   microcircuit:
     repository: common
     model_dir: Potjans_2014
