@@ -39,6 +39,9 @@ benchmarks:
       - tasks_per_node
       - model_time_sim
       - model_time_presim
+      - compressed_spikes
+      - dendritic_delay
+      - axonal_delay
     metrics:
       - time_construction_create
       - time_construction_connect
@@ -119,6 +122,9 @@ benchmarks:
       - tasks_per_node
       - model_time_sim
       - model_time_presim
+      - compressed_spikes
+      - dendritic_delay
+      - axonal_delay
     metrics:
       - time_construction_create
       - time_construction_connect
