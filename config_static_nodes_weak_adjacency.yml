@@ -27,11 +27,10 @@ benchmarks:
       - {name: record_spikes, type: string, _: "False"}  # whether to write spiking output to file, either True or False
       - {name: rng_seed, type: int, _: "42,55,1010101"}  # rng seed for NEST, accepts a list in the format a,b,c,... for generating multiple runs
       - {name: compressed_spikes, type: string, _: "True"}
-      - {name: sort_connections, type: string, _: "True"}
       - {name: dendritic_delay, type: float, _: "1.5"}  # dendritic delay of all connections
       - {name: axonal_delay, type: float, _: "0."}  # axonal delay of all connections
     run_parameters:
-      script_path: hpc_benchmark_static.py
+      script_path: hpc_benchmark_no_hpc_static.py
     results:
       - scale
       - rng_seed
@@ -41,7 +40,6 @@ benchmarks:
       - model_time_sim
       - model_time_presim
       - compressed_spikes
-      - sort_connections
       - dendritic_delay
       - axonal_delay
     metrics:
@@ -56,12 +54,12 @@ benchmarks:
       - time_gather_spike_data
       - time_gather_target_data
       - time_communicate_prepare
-      - time_deliver_conn
+      - time_adjacency_list
       - time_deliver_node
       - time_stdp_delivery
       - time_static_delivery
       - time_node_archive
-      - time_correction
+      - time_deliver_conn
       - py_time_kernel_prepare
       - py_time_network_local
       - py_time_network_global
@@ -78,7 +76,7 @@ benchmarks:
       - init_memory
       - total_memory
       - num_connections
-      - num_corrections
+      - local_spike_counter
   microcircuit:
     repository: common
     model_dir: Potjans_2014
@@ -107,9 +105,8 @@ benchmarks:
       - {name: record_spikes, type: string, _: ""}  # change to 'spike_recorder' for spike recordings
       - {name: kwds, separator: ;, type: string, _: "{}"}  # can be used for passing arguments to SetKernelStatus, such as max_buffer_size_spike_data. If no arguments should be passed leave this empty. If something should be passed insert a dictionary, eg: {'max_buffer_size_spike_data': 10}
       - {name: compressed_spikes, type: string, _: "True"}
-      - {name: sort_connections, type: string, _: "True"}
-      - {name: dendritic_delay, type: float, _: "0.5"}  # dendritic delay of all connections
-      - {name: axonal_delay, type: float, _: "1.0,2.5,5.5,8.5"}  # axonal delay of all connections
+      - {name: dendritic_delay, type: float, _: "1.5"}  # dendritic delay of all connections
+      - {name: axonal_delay, type: float, _: "0."}  # axonal delay of all connections
     run_parameters:
       log_path: "data"
       script_path: bm_run_microcircuit.py
@@ -126,7 +123,6 @@ benchmarks:
       - model_time_sim
       - model_time_presim
       - compressed_spikes
-      - sort_connections
       - dendritic_delay
       - axonal_delay
     metrics:
@@ -141,12 +137,12 @@ benchmarks:
       - time_gather_spike_data
       - time_gather_target_data
       - time_communicate_prepare
-      - time_deliver_conn
+      - time_adjacency_list
       - time_deliver_node
       - time_stdp_delivery
       - time_static_delivery
       - time_node_archive
-      - time_correction
+      - time_deliver_conn
       - py_time_kernel_prepare
       - py_time_network_local
       - py_time_network_global
@@ -163,7 +159,7 @@ benchmarks:
       - init_memory
       - total_memory
       - num_connections
-      - num_corrections
+      - local_spike_counter
   multi_area:
     repository: common
     model_dir: multi-area-model
@@ -187,9 +183,6 @@ benchmarks:
       - {name: scale_K, type: float, _: "0.01"}  # scaling the indegree, 1. -> original model
       - {name: rng_seed, type: int, _: "55"}  # rng seed for NEST, accepts a list in the format a,b,c,... for generating multiple runs
       - {name: compressed_spikes, type: string, _: "True"}
-      - {name: sort_connections, type: string, _: "True"}
-      - {name: dendritic_delay, type: float, _: "1.5"}  # dendritic delay of all connections
-      - {name: axonal_delay, type: float, _: "0."}  # axonal delay of all connections
     run_parameters:
       log_path: "data/${data_folder_hash}/recordings"
       script_path: run_benchmark.py
@@ -209,7 +202,6 @@ benchmarks:
       - model_time_sim
       - model_time_presim
       - compressed_spikes
-      - sort_connections
       - dendritic_delay
       - axonal_delay
     metrics:
@@ -224,12 +216,12 @@ benchmarks:
       - time_gather_spike_data
       - time_gather_target_data
       - time_communicate_prepare
-      - time_deliver_conn
+      - time_adjacency_list
       - time_deliver_node
       - time_stdp_delivery
       - time_static_delivery
       - time_node_archive
-      - time_correction
+      - time_deliver_conn
       - py_time_kernel_prepare
       - py_time_network_local
       - py_time_network_global
@@ -246,7 +238,7 @@ benchmarks:
       - init_memory
       - total_memory
       - num_connections
-      - num_corrections
+      - local_spike_counter
 user_config:
   jureca:
     account: "jinb33"  # slurm account name for job submission

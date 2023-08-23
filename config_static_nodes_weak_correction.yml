@@ -28,8 +28,8 @@ benchmarks:
       - {name: rng_seed, type: int, _: "42,55,1010101"}  # rng seed for NEST, accepts a list in the format a,b,c,... for generating multiple runs
       - {name: compressed_spikes, type: string, _: "True"}
       - {name: sort_connections, type: string, _: "True"}
-      - {name: dendritic_delay, type: float, _: "0.5"}  # dendritic delay of all connections
-      - {name: axonal_delay, type: float, _: "1.0,2.5,5.5,8.5"}  # axonal delay of all connections
+      - {name: dendritic_delay, type: float, _: "1.5"}  # dendritic delay of all connections
+      - {name: axonal_delay, type: float, _: "0."}  # axonal delay of all connections
     run_parameters:
       script_path: hpc_benchmark_static.py
     results:
@@ -108,8 +108,8 @@ benchmarks:
       - {name: kwds, separator: ;, type: string, _: "{}"}  # can be used for passing arguments to SetKernelStatus, such as max_buffer_size_spike_data. If no arguments should be passed leave this empty. If something should be passed insert a dictionary, eg: {'max_buffer_size_spike_data': 10}
       - {name: compressed_spikes, type: string, _: "True"}
       - {name: sort_connections, type: string, _: "True"}
-      - {name: dendritic_delay, type: float, _: "0.5"}  # dendritic delay of all connections
-      - {name: axonal_delay, type: float, _: "1.0,2.5,5.5,8.5"}  # axonal delay of all connections
+      - {name: dendritic_delay, type: float, _: "1.5"}  # dendritic delay of all connections
+      - {name: axonal_delay, type: float, _: "0."}  # axonal delay of all connections
     run_parameters:
       log_path: "data"
       script_path: bm_run_microcircuit.py
@@ -188,8 +188,8 @@ benchmarks:
       - {name: rng_seed, type: int, _: "55"}  # rng seed for NEST, accepts a list in the format a,b,c,... for generating multiple runs
       - {name: compressed_spikes, type: string, _: "True"}
       - {name: sort_connections, type: string, _: "True"}
-      - {name: dendritic_delay, type: float, _: "0.5"}  # dendritic delay of all connections
-      - {name: axonal_delay, type: float, _: "1.0,2.5,5.5,8.5"}  # axonal delay of all connections
+      - {name: dendritic_delay, type: float, _: "1.5"}  # dendritic delay of all connections
+      - {name: axonal_delay, type: float, _: "0."}  # axonal delay of all connections
     run_parameters:
       log_path: "data/${data_folder_hash}/recordings"
       script_path: run_benchmark.py
