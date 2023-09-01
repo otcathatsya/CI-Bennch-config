@@ -30,7 +30,7 @@ benchmarks:
       - {name: sort_connections, type: string, _: "True"}
       - {name: delay, type: float, _: "1.5"}  # dendritic delay of all connections
     run_parameters:
-      script_path: hpc_benchmark_static.py
+      script_path: hpc_benchmark_master_static.py
     results:
       - scale
       - rng_seed
