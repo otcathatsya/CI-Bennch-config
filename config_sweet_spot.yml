@@ -10,12 +10,12 @@ benchmarks:
       jureca:
         num_nodes: "64"
         tasks_per_node: "1,4,8"
-        threads_per_task: "128/$tasks_per_node"
+        threads_per_task: "128//$tasks_per_node"
         walltime: "02:00:00"
       jusuf:
         num_nodes: "64"
         tasks_per_node: "1,4,8"
-        threads_per_task: "128/$tasks_per_node"
+        threads_per_task: "128//$tasks_per_node"
         walltime: "02:00:00"
     model_parameters:
       - {name: network_state, type: string, _: "metastable"}  # can be either "metastable" or "ground"
