@@ -9,13 +9,13 @@ benchmarks:
     machine_parameters:
       jureca:
         num_nodes: "4,8,12,24,32,64"
-        tasks_per_node: "2"
-        threads_per_task: "64"
+        tasks_per_node: "4"
+        threads_per_task: "32"
         walltime: "00:10:00"
       jusuf:
         num_nodes: "4,8,12,24,32,64"
-        tasks_per_node: "2"
-        threads_per_task: "64"
+        tasks_per_node: "4"
+        threads_per_task: "32"
         walltime: "00:10:00"
     model_parameters:
       - {name: model_time_sim, type: float, _: "1000."}       # biological time to be simulated in ms
@@ -68,14 +68,14 @@ benchmarks:
     model_dir: Potjans_2014
     machine_parameters:
       jureca:
-        num_nodes: "4,8,12,24,32,64"
-        tasks_per_node: "2"
-        threads_per_task: "64"
+        num_nodes: "1"
+        tasks_per_node: "4"
+        threads_per_task: "32"
         walltime: "00:05:00"
       jusuf:
-        num_nodes: "4,8,12,24,32,64"
-        tasks_per_node: "2"
-        threads_per_task: "64"
+        num_nodes: "1"
+        tasks_per_node: "4"
+        threads_per_task: "32"
         walltime: "00:05:00"
     model_parameters:
       - {name: net_params, type: string, _: "network_params.py"}  # default network parameters
@@ -140,13 +140,13 @@ benchmarks:
     machine_parameters:
       jureca:
         num_nodes: "4,8,12,24,32,64"
-        tasks_per_node: "2"
-        threads_per_task: "64"
+        tasks_per_node: "4"
+        threads_per_task: "32"
         walltime: "02:00:00"
       jusuf:
         num_nodes: "4,8,12,24,32,64"
-        tasks_per_node: "2"
-        threads_per_task: "64"
+        tasks_per_node: "4"
+        threads_per_task: "32"
         walltime: "02:00:00"
     model_parameters:
       - {name: network_state, type: string, _: "metastable"}  # can be either "metastable" or "ground"
