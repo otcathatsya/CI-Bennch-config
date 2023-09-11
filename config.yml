@@ -11,18 +11,19 @@ benchmarks:
         num_nodes: "4,8,12,24,32,64"
         tasks_per_node: "2"
         threads_per_task: "64"
-        walltime: "00:05:00"
+        walltime: "00:10:00"
       jusuf:
         num_nodes: "4,8,12,24,32,64"
         tasks_per_node: "2"
         threads_per_task: "64"
-        walltime: "00:05:00"
+        walltime: "00:10:00"
     model_parameters:
       - {name: model_time_sim, type: float, _: "1000."}       # biological time to be simulated in ms
       - {name: model_time_presim, type: float, _: "500."}     # presimulation time for avoiding initial transients in ms
       - {name: scale, mode: python, type: float, _: "8.*$num_nodes"}      # scaling the number of neurons, 1. -> original model
       - {name: record_spikes, type: string, _: "False"}       # whether to write spiking output to file, either True or False
       - {name: rng_seed, type: int, _: "654,55,92743"}        # rng seed for NEST, accepts a list in the format a,b,c,... for generating multiple runs
+      - {name: kwds, separator: ;, type: string, _: "{'spike_buffer_shrink_limit': 0.0};{'spike_buffer_shrink_limit': 0.2}"}
     run_parameters:
       script_path: hpc_benchmark.py
     results:
@@ -88,7 +89,7 @@ benchmarks:
       - {name: model_time_presim, _: "100."}  # in ms
       - {name: rng_seed, _: "654,11,91856"}  # rng seed
       - {name: record_spikes, type: string, _: ""}  # change to 'spike_recorder' for spike recordings
-      - {name: kwds, separator: ;, type: string, _: "{}"}  # can be used for passing arguments to SetKernelStatus, such as max_buffer_size_spike_data. If no arguments should be passed leave this empty. If something should be passed insert a dictionary, eg: {'max_buffer_size_spike_data': 10}
+      - {name: kwds, separator: ;, type: string, _: "{'spike_buffer_shrink_limit': 0.0};{'spike_buffer_shrink_limit': 0.2}"}  # can be used for passing arguments to SetKernelStatus, such as max_buffer_size_spike_data. If no arguments should be passed leave this empty. If something should be passed insert a dictionary, eg: {'max_buffer_size_spike_data': 10}
     run_parameters:
       log_path: "data"
       script_path: bm_run_microcircuit.py
@@ -155,6 +156,7 @@ benchmarks:
       - {name: scale_N, type: float, _: "1."}  # scaling the number of neurons, 1. -> original model
       - {name: scale_K, type: float, _: "1."}  # scaling the indegree, 1. -> original model
       - {name: rng_seed, _: "654,11,91856"}  # rng seed for NEST, accepts a list in the format a,b,c,... for generating multiple runs
+      - {name: kwds, separator: ;, type: string, _: "{'spike_buffer_shrink_limit': 0.0};{'spike_buffer_shrink_limit': 0.2}"}
     run_parameters:
       log_path: "data/${data_folder_hash}/recordings"
       script_path: run_benchmark.py
