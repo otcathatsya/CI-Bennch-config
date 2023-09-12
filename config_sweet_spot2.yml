@@ -56,6 +56,7 @@ benchmarks:
       - py_time_connect_area
       - py_time_connect_cc
       - py_time_connect
+      - spike_buffer_shrink_limit
     metrics_sum:
       - base_memory
       - network_memory
@@ -127,6 +128,7 @@ benchmarks:
       - py_time_connect_area
       - py_time_connect_cc
       - py_time_connect
+      - spike_buffer_shrink_limit
     metrics_sum:
       - base_memory
       - network_memory
@@ -196,6 +198,7 @@ benchmarks:
       - py_time_connect_area
       - py_time_connect_cc
       - py_time_connect
+      - spike_buffer_shrink_limit
     metrics_sum:
       - base_memory
       - network_memory
