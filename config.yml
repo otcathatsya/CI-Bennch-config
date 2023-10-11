@@ -1,7 +1,7 @@
 repositories:
   common:
-    url: https://github.com/JanVogelsang/ci-bennch-models.git
-    branch: main
+    url: https://github.com/otcathatsya/ci-bennch-models.git
+    branch: exabrainprep
 benchmarks:
   hpc_benchmark:
     repository: common
