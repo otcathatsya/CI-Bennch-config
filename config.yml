@@ -157,7 +157,7 @@ benchmarks:
       - {name: model_time_presim, type: float, _: "500."}  # presimulation time for avoiding initial transients in ms
       - {name: scale_N, type: float, _: "1."}  # scaling the number of neurons, 1. -> original model
       - {name: scale_K, type: float, _: "1."}  # scaling the indegree, 1. -> original model
-      - {name: rng_seed, _: "654,11,91856"}  # rng seed for NEST, accepts a list in the format a,b,c,... for generating multiple runs
+      - {name: rng_seed, _: "654"}  # rng seed for NEST, accepts a list in the format a,b,c,... for generating multiple runs
       - {name: kwds, separator: ;, type: string, _: "{'spike_buffer_shrink_limit': 0.0};{'spike_buffer_shrink_limit': 0.2}"}
     run_parameters:
       log_path: "data/${data_folder_hash}/recordings"
