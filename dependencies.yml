@@ -3,7 +3,7 @@ modules: &module-list >-
   GCCcore/.11.3.0
   GCC/11.3.0
   CMake/3.23.1
-  ParaStationMPI/5.8.0-1
+  OpenMPI/4.1.4
   Python/3.10.4
   PyYAML/6.0
   SciPy-bundle/2022.05
