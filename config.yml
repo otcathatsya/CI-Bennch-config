@@ -141,7 +141,7 @@ benchmarks:
     model_dir: multi-area-model
     machine_parameters:
       jureca:
-        num_nodes: "4,8,16,32,48"
+        num_nodes: "4,8,16,32,48,64"
         tasks_per_node: "2"
         threads_per_task: "64"
         walltime: "03:00:00"
