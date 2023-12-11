@@ -1,78 +1,78 @@
 repositories:
   common:
-    url: https://github.com/otcathatsya/ci-bennch-models.git
-    branch: exabrainprep
+    url: https://github.com/JanVogelsang/ci-bennch-models.git
+    branch: main
 benchmarks:
   multi_area:
-      repository: common
-      model_dir: multi-area-model
-      machine_parameters:
-        jureca:
-          num_nodes: "64"
-          tasks_per_node: "2"
-          threads_per_task: "64"
-          walltime: "03:00:00"
-        jusuf:
-          num_nodes: "64"
-          tasks_per_node: "2"
-          threads_per_task: "64"
-          walltime: "01:00:00"
-      model_parameters:
-        - {name: network_state, type: string, _: "metastable"}  # can be either "metastable" or "ground"
-        - {name: record_spikes, type: string, _: "False"}  # whether to write spiking output to file, either True or False
-        - {name: model_time_sim, type: float, _: "10000."}  # biological time to be simulated in ms
-        - {name: model_time_presim, type: float, _: "500."}  # presimulation time for avoiding initial transients in ms
-        - {name: scale_N, type: float, _: "1."}  # scaling the number of neurons, 1. -> original model
-        - {name: scale_K, type: float, _: "1."}  # scaling the indegree, 1. -> original model
-        - {name: rng_seed, _: "654"}  # rng seed for NEST, accepts a list in the format a,b,c,... for generating multiple runs
-        - {name: kwds, separator: ;, type: string, _: "{'spike_buffer_shrink_limit': 0.0};{'spike_buffer_shrink_limit': 0.2}"}
-      run_parameters:
-        log_path: "data/${data_folder_hash}/recordings"
-        script_path: run_benchmark.py
-        optional_run_command: |+
-          data_folder_hash=$(uuidgen)
-          mkdir -p ${jube_wp_abspath}/data
-          srun --ntasks=1 --nodes=1 python ${model_path}/run_benchmark_createParams.py ${scale_N} ${num_vps} ${model_time_sim} ${scale_K} ${jube_wp_abspath}/data ${data_folder_hash} ${network_state} ${rng_seed} ${model_time_presim} ${record_spikes}
-        run_args: ${jube_wp_abspath}/data ${data_folder_hash} ${network_state}
-      results:
-        - scale_N
-        - scale_K
-        - rng_seed
-        - num_nodes
-        - threads_per_task
-        - tasks_per_node
-        - model_time_sim
-        - model_time_presim
-      metrics:
-        - time_construction_create
-        - time_construction_connect
-        - time_simulate
-        - time_collocate_spike_data
-        - time_communicate_spike_data
-        - time_deliver_spike_data
-        - time_update
-        - time_communicate_target_data
-        - time_gather_spike_data
-        - time_gather_target_data
-        - time_communicate_prepare
-        - py_time_kernel_prepare
-        - py_time_network_local
-        - py_time_network_global
-        - py_time_simulate
-        - py_time_presimulate
-        - py_time_network_prepare
-        - py_time_create
-        - py_time_connect_area
-        - py_time_connect_cc
-        - py_time_connect
-        - spike_buffer_shrink_limit
-      metrics_sum:
-        - base_memory
-        - network_memory
-        - init_memory
-        - total_memory
-        - num_connections
-        - local_spike_counter
+    repository: common
+    model_dir: multi-area-model
+    machine_parameters:
+      jureca:
+        num_nodes: "4,8,16,32"
+        tasks_per_node: "2"
+        threads_per_task: "64"
+        walltime: "03:00:00"
+      jusuf:
+        num_nodes: "4,8,16,32"
+        tasks_per_node: "2"
+        threads_per_task: "64"
+        walltime: "03:00:00"
+    model_parameters:
+      - {name: network_state, type: string, _: "metastable"}  # can be either "metastable" or "ground"
+      - {name: record_spikes, type: string, _: "False"}  # whether to write spiking output to file, either True or False
+      - {name: model_time_sim, type: float, _: "10000."}  # biological time to be simulated in ms
+      - {name: model_time_presim, type: float, _: "500."}  # presimulation time for avoiding initial transients in ms
+      - {name: scale_N, type: float, _: "1."}  # scaling the number of neurons, 1. -> original model
+      - {name: scale_K, type: float, _: "1."}  # scaling the indegree, 1. -> original model
+      - {name: rng_seed, _: "654"}  # rng seed for NEST, accepts a list in the format a,b,c,... for generating multiple runs
+      - {name: kwds, separator: ;, type: string, _: "{'spike_buffer_shrink_limit': 0.0};{'spike_buffer_shrink_limit': 0.2}"}
+    run_parameters:
+      log_path: "data/${data_folder_hash}/recordings"
+      script_path: run_benchmark.py
+      optional_run_command: |+
+        data_folder_hash=$(uuidgen)
+        mkdir -p ${jube_wp_abspath}/data
+        srun --ntasks=1 --nodes=1 python ${model_path}/run_benchmark_createParams.py ${scale_N} ${num_vps} ${model_time_sim} ${scale_K} ${jube_wp_abspath}/data ${data_folder_hash} ${network_state} ${rng_seed} ${model_time_presim} ${record_spikes}
+      run_args: ${jube_wp_abspath}/data ${data_folder_hash} ${network_state}
+    results:
+      - scale_N
+      - scale_K
+      - rng_seed
+      - num_nodes
+      - threads_per_task
+      - tasks_per_node
+      - model_time_sim
+      - model_time_presim
+    metrics:
+      - time_construction_create
+      - time_construction_connect
+      - time_simulate
+      - time_collocate_spike_data
+      - time_communicate_spike_data
+      - time_deliver_spike_data
+      - time_update
+      - time_communicate_target_data
+      - time_gather_spike_data
+      - time_gather_target_data
+      - time_communicate_prepare
+      - py_time_kernel_prepare
+      - py_time_network_local
+      - py_time_network_global
+      - py_time_simulate
+      - py_time_presimulate
+      - py_time_network_prepare
+      - py_time_create
+      - py_time_connect_area
+      - py_time_connect_cc
+      - py_time_connect
+      - spike_buffer_shrink_limit
+    metrics_sum:
+      - base_memory
+      - network_memory
+      - init_memory
+      - total_memory
+      - num_connections
+      - local_spike_counter
 user_config:
   jureca:
     account: "jinb33"  # slurm account name for job submission
