@@ -16,6 +16,7 @@ modules: &module-list >-
   git/2.41.0-nodocs
   IPython/8.14.0
   JUBE/2.6.1
+  Valgrind/3.21.0
 pip: &pip-list >-
   future
   nested_dict
