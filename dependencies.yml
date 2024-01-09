@@ -23,6 +23,21 @@ pip: &pip-list >-
   dicthash
   jupyter
   nbconvert
+  pytest
+  pytest-timeout
+  pytest-xdist
+  pytest-pylint
+  pytest-mypy
+  pytest-cov
+  data-science-types
+  terminaltables
+  pycodestyle
+  pydocstyle
+  rstcheck
+  mypy
+  junitparser
+  clang-format
+  attrs
 jureca:
   variables:
     TEMP_DIR: "$$SCRATCH_cjinb33/ci-bennch/jureca/userdata"   # Directory to temporary files accessible from both login and compute nodes
