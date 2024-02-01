@@ -212,7 +212,11 @@ benchmarks:
       - local_spike_counter
 user_config:
   jureca:
-    build-time-limit: "00:10:00"  # slurm time limit for the build job
-  jusuf:
+    account: "jinb33"  # slurm account name for job submission
+    partition: "dc-cpu"  # cluster partition, takes system default if left empty
     build-time-limit: "00:10:00"
+  jusuf:
+    account:  "icei-hbp-2020-0005"
+    build-time-limit: "00:10:00"
+    partition: "batch"
 dependencies: dependencies.yml
