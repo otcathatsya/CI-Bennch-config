@@ -1,12 +1,10 @@
 repositories:
-  common:
-    url: https://github.com/JanVogelsang/ci-bennch-models.git
-    branch: main
-software_parameters:
-  modulefile: nest3.module
-  planfile: nest.planfile
-  simulator_repo_url: https://github.com/nest/nest-simulator
-  simulator_repo_branch: master
+  base:
+    url: https://github.com/JanVogelsang/CI-Bennch-config.git
+    branch: root
+extends:
+  repo: base
+  config_file: config.yml
 benchmarks:
   hpc_benchmark:
     repository: common
