@@ -4,7 +4,7 @@ modules: &module-list >-
   GCC/12.3.0
   CMake/3.26.3
   OpenMPI/4.1.5
-  Python/3.10.4
+  Python/3.11.3
   PyYAML/6.0
   SciPy-bundle/2023.07
   matplotlib/3.7.2
@@ -14,30 +14,14 @@ modules: &module-list >-
   Boost/1.82.0
   Autotools/20220317
   git/2.41.0-nodocs
+  git-annex/10.20230802
   IPython/8.14.0
-  JUBE/2.6.1
-  Valgrind/3.21.0
 pip: &pip-list >-
   future
   nested_dict
   dicthash
   jupyter
   nbconvert
-  pytest
-  pytest-timeout
-  pytest-xdist
-  pytest-pylint
-  pytest-mypy
-  pytest-cov
-  data-science-types
-  terminaltables
-  pycodestyle
-  pydocstyle
-  rstcheck
-  mypy
-  junitparser
-  clang-format
-  attrs
 jureca:
   variables:
     TEMP_DIR: "$$SCRATCH_cjinb33/ci-bennch/jureca/userdata"   # Directory to temporary files accessible from both login and compute nodes
@@ -52,13 +36,14 @@ jureca:
   init:
     - 'module load $MODULE_LIST'
     - 'python -m venv --system-site-packages benchmarking-env'
+    - 'benchmarking-env/bin/pip install $USERSOFTWARE_DIR/JUBE/'
     - 'benchmarking-env/bin/pip install $PIP_LIST'
     - 'ln -s "$USERSOFTWARE_DIR/builder/build.sh" "$(pwd)/build"'
   load:
     - 'module load $MODULE_LIST'
     - 'source benchmarking-env/bin/activate'
     - 'export PYTHONPATH="$PYTHONPATH:$USERSOFTWARE_DIR/bennchplot/"'
-    - 'export PATH="$(pwd):$USERSOFTWARE_DIR/git-annex:$PATH"'
+    - 'export PATH="$(pwd):$PATH"'
 jusuf:
   variables:
     TEMP_DIR: "$$SCRATCH_cjinb33/ci-bennch/jusuf/userdata"   # Directory to temporary files accessible from both login and compute nodes
@@ -73,10 +58,11 @@ jusuf:
   init:
     - 'module load $MODULE_LIST'
     - 'python -m venv --system-site-packages benchmarking-env'
+    - 'benchmarking-env/bin/pip install $USERSOFTWARE_DIR/JUBE/'
     - 'benchmarking-env/bin/pip install $PIP_LIST'
     - 'ln -s "$USERSOFTWARE_DIR/builder/build.sh" "$(pwd)/build"'
   load:
     - 'module load $MODULE_LIST'
     - 'source benchmarking-env/bin/activate'
     - 'export PYTHONPATH="$PYTHONPATH:$USERSOFTWARE_DIR/bennchplot/"'
-    - 'export PATH="$(pwd):$USERSOFTWARE_DIR/git-annex:$PATH"'
+    - 'export PATH="$(pwd):$PATH"'
