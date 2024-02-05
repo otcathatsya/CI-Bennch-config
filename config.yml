@@ -2,6 +2,9 @@ repositories:
   base:
     url: https://github.com/JanVogelsang/CI-Bennch-config.git
     branch: root
+  common:
+    url: https://github.com/otcathatsya/ci-bennch-models.git
+    branch: exabrainprep
 extends:
   repo: base
   config_file: config.yml
