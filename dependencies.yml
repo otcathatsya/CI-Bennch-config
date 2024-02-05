@@ -58,7 +58,7 @@ jusuf:
   init:
     - 'module load $MODULE_LIST'
     - 'python -m venv --system-site-packages benchmarking-env'
-    - 'export USERDIR=$(pwd) && cd $USERSOFTWARE_DIR/JUBE/ && $USERDIR/benchmarking-env/bin/python setup.py build -b pip-build/ install && cd $USERDIR'
+    - 'export USERDIR=$(pwd) && cd $USERSOFTWARE_DIR/JUBE/ && $USERDIR/benchmarking-env/bin/python setup.py build -b $USERDIR/pip-build/ install && cd $USERDIR'
     - 'benchmarking-env/bin/pip install $PIP_LIST'
     - 'ln -s "$USERSOFTWARE_DIR/builder/build.sh" "$(pwd)/build"'
   load:
