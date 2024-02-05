@@ -5,6 +5,9 @@ repositories:
   exabrainprep:
     url: https://github.com/otcathatsya/ci-bennch-models.git
     branch: exabrainprep
+software_parameters:
+  simulator_repo_url: https://github.com/otcathatsya/nest-simulator
+  simulator_repo_branch: prototype/connection_semantics
 extends:
   repo: base
   config_file: config.yml
