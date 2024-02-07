@@ -5,6 +5,9 @@ repositories:
   exabrainprep:
     url: https://github.com/otcathatsya/ci-bennch-models.git
     branch: exabainprep
+  regular:
+    url: https://github.com/otcathatsya/ci-bennch-models.git
+    branch: main
 software_parameters:
   simulator_repo_url: https://github.com/otcathatsya/nest-simulator
   simulator_repo_branch: prototype/connection_semantics
@@ -50,7 +53,7 @@ benchmarks:
       - {name: rng_seed, type: int, _: "55"}  # rng seed
       - {name: kwds, separator: ;, type: string, _: "{}"}
   multi_area:
-    repository: common
+    repository: regular
     machine_parameters:
       jureca:
         num_nodes: "64"
