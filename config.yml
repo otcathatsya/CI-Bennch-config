@@ -34,16 +34,17 @@ benchmarks:
       - {name: rng_seed, type: int, _: "42"}                  # rng seed for NEST, accepts a list in the format a,b,c,... for generating multiple runs
       - {name: kwds, separator: ;, type: string, _: "{}"}
   microcircuit:
+    repository: regular
     machine_parameters:
       jureca:
         num_nodes: "1"
-        tasks_per_node: "2"
-        threads_per_task: "64"
+        tasks_per_node: "1"
+        threads_per_task: "128"
         walltime: "00:01:00"
       jusuf:
         num_nodes: "1"
-        tasks_per_node: "2"
-        threads_per_task: "64"
+        tasks_per_node: "1"
+        threads_per_task: "128"
         walltime: "00:01:00"
     model_parameters:
       - {name: scale_N, type: float, _: "0.01"}  # scaling the number of neurons, 1. -> original model
@@ -56,12 +57,12 @@ benchmarks:
     repository: regular
     machine_parameters:
       jureca:
-        num_nodes: "64"
+        num_nodes: "8,16,32,48,64"
         tasks_per_node: "2"
         threads_per_task: "64"
         walltime: "04:30:00"
       jusuf:
-        num_nodes: "64"
+        num_nodes: "8,16,32,48,64"
         tasks_per_node: "2"
         threads_per_task: "64"
         walltime: "04:30:00"
