@@ -14,7 +14,6 @@ modules: &module-list >-
   Boost/1.79.0
   Autotools/20220317
   git/2.36.0-nodocs
-  git-annex/10.20230802
   IPython/8.5.0
   
 pip: &pip-list >-
