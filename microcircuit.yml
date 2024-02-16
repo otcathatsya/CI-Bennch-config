@@ -12,13 +12,13 @@ benchmarks:
     machine_parameters:
       jureca:
         num_nodes: "2"
-        tasks_per_node: "1,2,3,4,5,6,7,8"
-        threads_per_task: "16"
+        tasks_per_node: "2"
+        threads_per_task: "64"
         walltime: "02:00:00"
       jusuf:
         num_nodes: "2"
-        tasks_per_node: "1,2,3,4,5,6,7,8"
-        threads_per_task: "16"
+        tasks_per_node: "2"
+        threads_per_task: "64"
         walltime: "02:00:00"
     model_parameters:
       - {name: net_params, type: string, _: "network_params.py"}  # default network parameters
