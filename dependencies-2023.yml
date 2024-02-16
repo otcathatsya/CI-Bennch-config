@@ -35,6 +35,7 @@ jureca:
     - 'jutil env activate -p djinb33'
   init:
     - 'module load $MODULE_LIST'
+    - 'export PATH="$(pwd):$USERSOFTWARE/ci-bennch/jureca/git-annex:$PATH"'
     - 'python -m venv --system-site-packages benchmarking-env'
     - 'git clone --depth=1 --branch=feature-python-exec https://github.com/JanVogelsang/JUBE.git jube'
     - 'benchmarking-env/bin/pip install $(pwd)/jube/'
