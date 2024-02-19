@@ -9,8 +9,8 @@ repositories:
     url: https://github.com/otcathatsya/ci-bennch-models.git
     branch: main
 software_parameters:
-  simulator_repo_url: https://github.com/nest/nest-simulator
-  simulator_repo_branch: master # prototype/connection_semantics
+  simulator_repo_url: https://github.com/otcathatsya/nest-simulator
+  simulator_repo_branch: prototype/connection_semantics # prototype/connection_semantics
 extends:
   repo: base
   config_file: config.yml
