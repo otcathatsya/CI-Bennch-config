@@ -4,7 +4,7 @@ repositories:
     branch: root
   exabrainprep:
     url: https://github.com/otcathatsya/ci-bennch-models.git
-    branch: exabainprep
+    branch: exabrainprep
   regular:
     url: https://github.com/otcathatsya/ci-bennch-models.git
     branch: main
