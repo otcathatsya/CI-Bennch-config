@@ -10,7 +10,7 @@ repositories:
     branch: main
 software_parameters:
   simulator_repo_url: https://github.com/otcathatsya/nest-simulator
-  simulator_repo_branch: prototype/connection_semantics # prototype/connection_semantics
+  simulator_repo_branch: master # prototype/connection_semantics
 extends:
   repo: base
   config_file: config.yml
@@ -54,18 +54,18 @@ benchmarks:
       - {name: rng_seed, type: int, _: "55,603,22"}  # rng seed
       - {name: kwds, separator: ;, type: string, _: "{}"}
   multi_area:
-    repository: exabrainprep
+    repository: regular
     machine_parameters:
       jureca:
         num_nodes: "64"
         tasks_per_node: "2"
         threads_per_task: "64"
-        walltime: "01:30:00"
+        walltime: "01:00:00"
       jusuf:
         num_nodes: "64"
         tasks_per_node: "2"
         threads_per_task: "64"
-        walltime: "01:30:00"
+        walltime: "01:00:00"
     model_parameters:
       - {name: model_time_sim, type: float, _: "10000."}  # biological time to be simulated in ms
       - {name: model_time_presim, type: float, _: "500."}  # presimulation time for avoiding initial transients in ms
