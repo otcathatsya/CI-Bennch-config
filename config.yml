@@ -40,12 +40,12 @@ benchmarks:
         num_nodes: "1"
         tasks_per_node: "2"
         threads_per_task: "16"
-        walltime: "00:01:00"
+        walltime: "00:30:00"
       jusuf:
         num_nodes: "1"
         tasks_per_node: "2"
         threads_per_task: "16"
-        walltime: "00:01:00"
+        walltime: "00:30:00"
     model_parameters:
       - {name: scale_N, type: float, _: "1.0"}  # scaling the number of neurons, 1. -> original model
       - {name: scale_K, type: float, _: "1.0"}  # scaling the indegree, 1. -> original model
